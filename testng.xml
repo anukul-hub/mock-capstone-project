@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Amazon Search Test Suite" parallel="tests" thread-count="2">
+    <test name="Search Box Tests">
+        <classes>
+            <class name="com.amazon.tests.SearchBoxTest"/>
+        </classes>
+    </test>
+</suite>
