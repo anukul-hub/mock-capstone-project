@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.amazon</groupId>
@@ -8,12 +8,20 @@
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Maven Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<!-- Selenium -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.21.0</version>
+			<version>4.25.0</version> <!-- latest stable -->
 		</dependency>
 
 		<!-- TestNG -->
@@ -28,7 +36,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.8.0</version>
+			<version>5.9.2</version> <!-- latest -->
 		</dependency>
 
 		<!-- Extent Reports -->
@@ -44,17 +52,6 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.5</version>
 		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.25.0</version> <!-- latest stable -->
-		</dependency>
-
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>5.9.2</version> <!-- latest -->
-		</dependency>
 
 		<!-- SLF4J binding for log4j -->
 		<dependency>
@@ -63,6 +60,34 @@
 			<version>2.0.13</version>
 		</dependency>
 
+		<!-- Cucumber Java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.23.0</version>
+		</dependency>
+
+		<!-- Cucumber TestNG integration -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.23.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JUnit Jupiter (optional if you want JUnit 5 support) -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -73,7 +98,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
 				<configuration>
-					<source>17</source>   <!-- change if you use Java 11 or 21 -->
+					<source>17</source> <!-- use your JDK version -->
 					<target>17</target>
 				</configuration>
 			</plugin>
@@ -91,5 +116,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
