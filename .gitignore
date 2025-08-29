@@ -3,3 +3,5 @@
 /workspace.xml
 *.properties
 /target/
+/.idea/
+/.settings/
